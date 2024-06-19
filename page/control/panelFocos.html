@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interruptores - IoT Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .switch-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .switch {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .switch.on {
+            background-color: green;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interruptores</h1>
+        <div class="switch-container">
+            <div class="switch" id="switch1"></div>
+            <div class="switch" id="switch2"></div>
+            <div class="switch" id="switch3"></div>
+            <div class="switch" id="switch4"></div>
+        </div>
+        <form id="switchForm">
+            <input type="hidden" name="switch1" id="switch1_input" value="0">
+            <input type="hidden" name="switch2" id="switch2_input" value="0">
+            <input type="hidden" name="switch3" id="switch3_input" value="0">
+            <input type="hidden" name="switch4" id="switch4_input" value="0">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const switches = document.querySelectorAll('.switch');
+            switches.forEach((sw, index) => {
+                sw.addEventListener('click', () => {
+                    sw.classList.toggle('on');
+                    const input = document.getElementById(`switch${index + 1}_input`);
+                    input.value = sw.classList.contains('on') ? '1' : '0';
+                });
+            });
+
+            document.getElementById('switchForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const values = Object.fromEntries(formData.entries());
+                console.log(values); // Puedes eliminar esto o reemplazarlo con una llamada a tu backend
+                alert(`Estado de los interruptores:\n${JSON.stringify(values, null, 2)}`);
+            });
+        });
+    </script>
+</body>
+</html>
