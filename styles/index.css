@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar-logo img {
+    height: 50px; /* Ajusta el tamaño del logo según sea necesario */
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    margin-left: 20px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    body {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .navbar-logo {
+        margin-bottom: 20px; /* Espacio entre el logo y los botones */
+    }
+    .navbar-logo img {
+        height: 90px; /* Ajusta el tamaño del logo según sea necesario */
+    }
+
+    .navbar-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .navbar-links a {
+        margin: 10px 0;
+        background-color: #fff;
+        color: #333;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1em;
+        border: 1px solid #333;
+    }
+    
+    .navbar-links a:hover {
+        background-color: #333;
+        color: #fff;
+    }
+    
+    main {
+        display: none; /* Ocultar el contenido principal en dispositivos móviles */
+    }
+}
