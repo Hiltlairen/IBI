@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
+
     flex-direction: column;
     min-height: 100vh;
 }
@@ -52,7 +52,13 @@ main.login-main {
     justify-content: center;
     align-items: center;
 }
-
+.navbar-links {
+    margin-bottom: 20px;
+}
+.navbar-links img {
+    margin-top: 10px;
+    height: 300px;
+}
 .login-form {
     display: flex;
     flex-direction: column;
@@ -92,9 +98,6 @@ main.login-main {
 .login-form button:hover {
     background-color: #555;
 }
-.logo-container img {
-    height: 300px; /* Ajusta el tamaño del logo según sea necesario */
-}
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
@@ -110,6 +113,10 @@ main.login-main {
         padding: 0 20px;
     }
     
+    .navbar-logo {
+        margin-bottom: 20px; /* Espacio entre el logo y los botones */
+    }
+
     .navbar-links {
         display: flex;
         flex-direction: column;
@@ -131,13 +138,12 @@ main.login-main {
         background-color: #333;
         color: #fff;
     }
-    
-    .logo-container img {
+    .navbar-links img {
         height: 90px; /* Ajusta el tamaño del logo según sea necesario */
     }
     
     main.login-main {
-        margin-top: 180px;
+        margin-top: 150px;
         display: flex;
         flex-direction: column;
         justify-content: center;
